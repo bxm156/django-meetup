@@ -1,5 +1,5 @@
 ---
-title: About
+layout: index
 ---
 
 # Header H1
