@@ -1,14 +1,36 @@
 ---
+published: true
 layout: index
----
-### Welcome to GitHub Pages.
-This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:
 
+---
+
+### Django 1.4
+#### User Profile Model
+
+In Django 1.4, you could define a model that that linked to the Django User Model.
+
+#####accounts/models.py
+```python
+from django.db import models
+from django.contrib.auth.models import User
+
+class UserProfile(models.Model):
+    user = models.ForeignKey(User, unique=True)
+    url = models.URLField(blank=True)
 ```
-$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+
+#####settings.py
+```python
+AUTH_PROFILE_MODULE = "accounts.UserProfile"
+````
+
+#####accounts/views.py
+```python
+@login_required
+def view_foo(request):
+    user_profile = request.user.get_profile()
 ```
+
 
 If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.
 
