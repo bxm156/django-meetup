@@ -127,6 +127,8 @@ INSTALLED_APPS = (
 
 INTERNAL_IPS = ('127.0.0.1', )
 
+AUTH_PROFILE_MODULE = "accounts.UserProfile"
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
