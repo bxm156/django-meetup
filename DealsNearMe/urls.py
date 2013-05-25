@@ -1,10 +1,13 @@
 from django.conf.urls import patterns, include, url
 
+import DealsNearMe.apps.accounts.urls
+
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^account/', include(DealsNearMe.apps.accounts.urls)),
     # Examples:
     # url(r'^$', 'DealsNearMe.views.home', name='home'),
     # url(r'^DealsNearMe/', include('DealsNearMe.foo.urls')),
