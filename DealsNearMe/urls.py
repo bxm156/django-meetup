@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 
 import DealsNearMe.apps.accounts.urls
+import DealsNearMe.apps.pages.urls
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -8,6 +9,7 @@ import DealsNearMe.apps.accounts.urls
 
 urlpatterns = patterns('',
     url(r'^account/', include(DealsNearMe.apps.accounts.urls)),
+    url(r'', include(DealsNearMe.apps.pages.urls)),
     # Examples:
     # url(r'^$', 'DealsNearMe.views.home', name='home'),
     # url(r'^DealsNearMe/', include('DealsNearMe.foo.urls')),
