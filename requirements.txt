@@ -8,3 +8,4 @@ gunicorn==0.17.4
 psycopg2==2.5
 python-memcached==1.51
 wsgiref==0.1.2
+geopy==0.95.1
