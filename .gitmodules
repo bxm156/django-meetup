@@ -1,0 +1,3 @@
+[submodule "DealsNearMe/static/bootstrap"]
+	path = DealsNearMe/static/bootstrap
+	url = git@github.com:twitter/bootstrap.git
