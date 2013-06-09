@@ -1,5 +1,8 @@
 *.py[cod]
 
+# Tags
+tags
+
 # C extensions
 *.so
 
