@@ -130,6 +130,7 @@ INSTALLED_APPS = (
 
 
 # LESS Compiler
+COMPRESS_ENABLED = True
 COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile} {outfile}'),
 )

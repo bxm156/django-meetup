@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 import DealsNearMe.apps.accounts.urls
 import DealsNearMe.apps.pages.urls
@@ -20,3 +21,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 )
+# We should never serve static files with the default Django system,
+# its insecure. Still good enough for a demo though. Normally when we
+# run Django in DEBUG mode, this automatically occurs, but since we are
+# using gunicorn on heroku, add it manually.
+urlpatterns += staticfiles_urlpatterns()
