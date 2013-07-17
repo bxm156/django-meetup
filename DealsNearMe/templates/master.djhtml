@@ -1,13 +1,16 @@
 {% load static %}
+{% load compress %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>{% block title %}Deals Near Me {% endblock title %}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		{% block css %}
+        {% compress css %}
+        {% block css %}
 		<!-- Boostrap CSS -->
-		<link rel="stylesheet/less" type="text/css" href="{% get_static_prefix %}bootstrap/less/bootstrap.less" media="screen">
+		<link rel="stylesheet" type="text/less" href="{% get_static_prefix %}bootstrap/less/bootstrap.less" media="screen">
 		{% endblock css %}
+        {% endcompress %}
 		{% block dev %}
 		<script type="text/javascript" src="{% get_static_prefix %}js/less-1.3.3.min.js"></script>
 		{% endblock %}
@@ -16,9 +19,23 @@
 		{% block body %}
 		{% include 'footer.djhtml' %}
 		{% endblock body %}
+        {% compress js %}
 		{% block javascript %}
-		<script type="text/javascript" src="{% get_static_prefix %}js/jquery-1.8.2.js"></script>
-		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap.min.js"></script>
-		{% endblock javascript %}
+		<script type="text/javascript" src="{% get_static_prefix %}js/jquery-1.10.1.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-affix.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-alert.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-button.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-carousel.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-collapse.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-dropdown.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-modal.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-popover.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-scrollspy.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-tab.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-tooltip.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-transition.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-typeahead.js"></script>
+        {% endblock javascript %}
+		{% endcompress %}
 	</body>
 </html>

@@ -21,6 +21,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 )
+
+
 # We should never serve static files with the default Django system,
 # its insecure. Still good enough for a demo though. Normally when we
 # run Django in DEBUG mode, this automatically occurs, but since we are
