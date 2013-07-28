@@ -3,6 +3,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 import DealsNearMe.apps.accounts.urls
 import DealsNearMe.apps.pages.urls
+import DealsNearMe.apps.login.urls
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -10,6 +11,7 @@ import DealsNearMe.apps.pages.urls
 
 urlpatterns = patterns('',
     url(r'^account/', include(DealsNearMe.apps.accounts.urls)),
+    url(r'^login/', include(DealsNearMe.apps.login.urls)),
     url(r'', include(DealsNearMe.apps.pages.urls)),
     # Examples:
     # url(r'^$', 'DealsNearMe.views.home', name='home'),

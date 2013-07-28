@@ -1,8 +1,10 @@
+import os
+
 from common import PROJECT_ROOT, APP_ROOT, DATABASE_URL
 import dj_database_url
 # Django settings for DealsNearMe project.
 
-DEBUG = True
+DEBUG = os.getenv('DEBUG', "True") == "True"
 TEMPLATE_DEBUG = DEBUG
 APPEND_SLASH = True
 
@@ -114,6 +116,7 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS = (
     'compressor',
+    'crispy_forms',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -121,6 +124,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'DealsNearMe.apps.accounts',
+    'DealsNearMe.apps.login',
     'DealsNearMe.apps.pages',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',

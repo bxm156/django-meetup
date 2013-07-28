@@ -16,8 +16,14 @@
 		{% endblock %}
 	</head>
 	<body>
-		{% block body %}
-		{% include 'footer.djhtml' %}
+        {% block body %}
+            {% block content %}
+                <div class="container">
+                {% block container %}
+                {% endblock container %}
+                </div>
+            {% endblock content %}
+        {% include 'footer.djhtml' %}
 		{% endblock body %}
         {% compress js %}
 		{% block javascript %}
@@ -29,10 +35,10 @@
 		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-collapse.js"></script>
 		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-dropdown.js"></script>
 		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-modal.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-tooltip.js"></script>
 		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-popover.js"></script>
 		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-scrollspy.js"></script>
 		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-tab.js"></script>
-		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-tooltip.js"></script>
 		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-transition.js"></script>
 		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-typeahead.js"></script>
         {% endblock javascript %}
