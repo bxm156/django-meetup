@@ -2,7 +2,12 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render_to_response
 from django.shortcuts import RequestContext
 
-from DealsNearMe.apps.accounts.forms import UserRegistrationForm
+from DealsNearMe.apps.accounts.forms import CrispyUserRegistrationForm
+
+
+def map(request):
+    context = RequestContext(request)
+    return render_to_response('map.djhtml', context_instance=context)
 
 
 @login_required
@@ -11,7 +16,7 @@ def view_page(request):
 
 
 def registration(request):
-    form = UserRegistrationForm(request.POST or None)
+    form = CrispyUserRegistrationForm(request.POST or None)
     if form.is_valid():
         form.save()
         return redirect("/login")
