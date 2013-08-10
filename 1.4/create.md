@@ -1,3 +1,8 @@
+---
+published: true
+layout: index
+
+---
 ### Django 1.4
 #### Creating the User Profile Model
 
