@@ -14,6 +14,10 @@ class UserRegistrationForm(UserCreationForm):
     city = forms.CharField(max_length=255, label='')
     state = USStateField(widget=USStateSelect, label='')
     zipcode = USZipCodeField(label='')
+    favorite_color = forms.CharField(max_length=255, label='')
+
+    class Meta(UserCreationForm.Meta):
+        fields = ('username', 'first_name', 'last_name',)
 
     def save(self, commit=True):
         user = super(UserRegistrationForm, self).save(commit)
@@ -28,11 +32,37 @@ class UserRegistrationForm(UserCreationForm):
             address=self.cleaned_data['address'],
             city=self.cleaned_data['city'],
             state=self.cleaned_data['state'],
-            zip=self.cleaned_data['zipcode'],
+            zipcode=self.cleaned_data['zipcode'],
+            favorite_color=self.cleaned_data['favorite_color'],
             latitude=lat,
             longitude=lng,
         )
         user_profile.save()
+
+
+class CrispyUserProfileForm(forms.ModelForm):
+
+    zipcode = USZipCodeField(label='Zip')
+
+    class Meta:
+        model = UserProfile
+        exclude = ['user', 'latitude', 'longitude']
+
+    def __init__(self, request=None, *args, **kwargs):
+        super(forms.ModelForm, self).__init__(request, *args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-profile'
+        self.helper.form_method = 'post'
+        self.helper.form_tag = True
+
+        self.helper.layout = Layout(
+                Field('address', label='', placeholder="Address"),
+                Field('city', label='', placeholder="City"),
+                Field('state', label='', placeholder="State"),
+                Field('zipcode', label='', placeholder="Zip"),
+                Field('favorite_color', label='', placeholder="Favorite Color"),
+                Submit('submit', "Update", css_class='btn-large')
+        )
 
 
 class CrispyUserRegistrationForm(UserRegistrationForm):
@@ -45,6 +75,8 @@ class CrispyUserRegistrationForm(UserRegistrationForm):
         self.helper.form_tag = True
 
         self.helper.layout = Layout(
+                Field('first_name', label='', placeholder="First Name"),
+                Field('last_name', label='', placeholder="Last Name"),
                 Field('username', label='', placeholder="Username"),
                 Field('password1', label='', placeholder="Password"),
                 Field('password2', label='', placeholder="Confirm Password"),
@@ -52,5 +84,6 @@ class CrispyUserRegistrationForm(UserRegistrationForm):
                 Field('city', label='', placeholder="City"),
                 Field('state', label='', placeholder="State"),
                 Field('zipcode', label='', placeholder="Zip"),
-                Submit('submit', 'Register', css_class="btn-large")
+                Field('favorite_color', label='', placeholder="Favorite Color"),
+                Submit('submit', "Register", css_class='btn-large')
         )
