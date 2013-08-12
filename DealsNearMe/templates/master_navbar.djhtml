@@ -11,13 +11,15 @@
 {% block container %}
 {% include "navbar.djhtml" %}
   <!-- Main hero unit for a primary marketing message or call to action -->
+  {% block hero_unit %}
   <div class="hero-unit">
-      {% block hero_unit %}
+      {% block hero_unit_content %}
     <h1>Hello, world!</h1>
     <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
     <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-     {% endblock hero_unit %}
-  </div>
+    {% endblock hero_unit_content %}
+</div>
+{% endblock hero_unit %}
 
   {% block row_content %}
   <!-- Example row of columns -->

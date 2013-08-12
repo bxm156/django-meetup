@@ -20,6 +20,5 @@ class CrispyAuthenticationForm(AuthenticationForm):
         self.helper.layout = Layout(
                 Field('username', label='', placeholder="Username", css_class="input-block-level"),
                 Field('password', label='', placeholder="Password", css_class="input-block-level"),
-                'remember_me',
                 Submit('submit', 'Sign in', css_class="btn-large")
         )

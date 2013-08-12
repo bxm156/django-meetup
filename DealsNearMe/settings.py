@@ -103,6 +103,8 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'DealsNearMe.urls'
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/account/'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'DealsNearMe.wsgi.application'

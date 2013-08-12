@@ -1,5 +1,6 @@
 from django.conf.urls import patterns
+from DealsNearMe.apps.login.forms import CrispyAuthenticationForm
 
-urlpatterns = patterns('DealsNearMe.apps.login.views',
-    (r'^$', 'login')
+urlpatterns = patterns('',
+        (r'^$', 'django.contrib.auth.views.login', {'template_name': 'login.djhtml', 'authentication_form': CrispyAuthenticationForm})
 )

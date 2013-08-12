@@ -1,3 +1,4 @@
+from django.contrib.auth import logout as logout_user
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render_to_response
 from django.shortcuts import RequestContext
@@ -27,6 +28,7 @@ def edit_profile(request):
         form = CrispyUserProfileForm(request.POST, instance=user_profile)
         if form.is_valid():
             form.save()
+            context.update({'submitted': True})
     else:
         form = CrispyUserProfileForm(instance=user_profile)
     context.update({'form': form})
@@ -41,3 +43,8 @@ def registration(request):
     context = RequestContext(request)
     context.update({'form': form})
     return render_to_response('registration.djhtml', context_instance=context)
+
+
+def logout(request):
+    logout_user(request)
+    return redirect("/")

@@ -1,13 +1,21 @@
 {% extends 'master_navbar.djhtml' %}
 {% load crispy_forms_tags %}
 {% block row_content %}
+{% block hero_unit %}
+{% endblock hero_unit %}
 <div class="row">
-    <div class="span3">
+    <div class="span2">
     </div>
-    <div class="span6">
+    <div class="span8">
+<h1>Update Profile</h2>
+        {% if submitted %}
+        <div class="alert alert-success">
+            Profile updated successfully!
+        </div>
+        {% endif %}
         {% crispy form %}
     </div>
-    <div class="span3">
+    <div class="span2">
     </div>
 </div>
 {% endblock row_content %}
