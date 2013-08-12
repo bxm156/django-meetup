@@ -1,5 +1,7 @@
 *.py[cod]
 
+/static
+
 # Tags
 tags
 
