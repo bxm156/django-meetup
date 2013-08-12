@@ -49,7 +49,7 @@ class CrispyUserProfileForm(forms.ModelForm):
         exclude = ['user', 'latitude', 'longitude']
 
     def __init__(self, request=None, *args, **kwargs):
-        super(forms.ModelForm, self).__init__(request, *args, **kwargs)
+        super(CrispyUserProfileForm, self).__init__(request, *args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_id = 'id-profile'
         self.helper.form_method = 'post'
