@@ -25,7 +25,6 @@
                 {% endblock container %}
                 </div>
             {% endblock content %}
-        {% include 'footer.djhtml' %}
 		{% endblock body %}
         {% compress js %}
 		{% block javascript %}

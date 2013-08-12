@@ -39,4 +39,3 @@
   {% endblock row_content %}
   <hr>
 {% endblock container %}
-{% include "footer.djhtml" %}
