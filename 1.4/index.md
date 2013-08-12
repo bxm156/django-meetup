@@ -52,3 +52,6 @@ class UserProxy(User):
 
 ####Monkey patch
 Yes, you could add new functionlity. Please don't, it will break.
+
+### Next
+[Creating the User Profile Model](http://bxm156.github.io/django-meetup/1.4/create)
