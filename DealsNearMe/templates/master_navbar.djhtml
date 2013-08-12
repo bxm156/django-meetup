@@ -1,12 +1,8 @@
 {% extends "master.djhtml" %}
+{% load static %}
 {% block css %}
 {{ block.super }}
-<style type="text/css">
-    body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-    }
-</style>
+    <link rel="stylesheet" type="text/less" href="{% get_static_prefix %}less/master_navbar.less" media="screen">
 {% endblock css %}
 {% block container %}
 {% include "navbar.djhtml" %}

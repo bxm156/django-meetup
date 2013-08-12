@@ -8,8 +8,10 @@
         {% compress css %}
         {% block css %}
 		<!-- Boostrap CSS -->
-		<link rel="stylesheet" type="text/less" href="{% get_static_prefix %}bootstrap/less/bootstrap.less" media="screen">
-		{% endblock css %}
+		<link rel="stylesheet" type="text/less" href="{% get_static_prefix %}theme.less" media="screen">
+        {% endblock css %}
+        {% block custom_css %}
+        {% endblock custom_css %}
         {% endcompress %}
 		{% block dev %}
 		<script type="text/javascript" src="{% get_static_prefix %}js/less-1.3.3.min.js"></script>
