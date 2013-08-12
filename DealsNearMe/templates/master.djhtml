@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{% block title %}Deals Near Me {% endblock title %}</title>
+		<title>{% block title %}django-meetup{% endblock title %}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% compress css %}
         {% block css %}
