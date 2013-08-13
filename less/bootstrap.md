@@ -24,7 +24,7 @@ You can override any Bootstrap variables in this file
 {{ “{% load compress “ }}%}
 ```
 
-5. Include the Bootstrap LESS and another other CSS/LESS files in the template and surrounded them with the `{{ “{% compress css “}}%}` tag.
+5. Include the Bootstrap LESS and another other CSS/LESS files in the template and surrounded them with the `{{ “{% compress css “ }}%}` tag.
 
 ```html
 {{ “{% load static “ }}%}
