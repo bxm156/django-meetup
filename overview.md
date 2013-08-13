@@ -9,9 +9,9 @@ Django provides a User model and Authentication framework with attributes and me
 
 There are several approaches that can be used to extend the functionality of the Django User Model
 
-1. get_profile()
+1. get_profile() (Django 1.4)
 2. Proxy Objects
-3. Subclassing
+3. Subclassing (Django 1.5)
 
 #### get_profile()
 get_profile() has been the standard way of extending the User model in pre-1.5 Django. A second model is created with a 1-1 relationship to the Django User model. This new model can have any custom fields and methods defined, but results in extra SQL queries being performed in order to retrive the user's data.
