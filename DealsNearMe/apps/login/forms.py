@@ -5,9 +5,7 @@ from crispy_forms.helper import FormHelper
 
 
 class CrispyAuthenticationForm(AuthenticationForm):
-    username = forms.CharField(max_length=254, label="")
-    password = forms.CharField(label="", widget=forms.PasswordInput)
-    remember_me = forms.BooleanField(required=False)
+
 
     def __init__(self, request=None, *args, **kwargs):
         super(CrispyAuthenticationForm, self).__init__(request, *args, **kwargs)
