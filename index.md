@@ -12,8 +12,8 @@ published: true
 - [Examples](http://bxm156.github.io/django-meetup/1.5/create)
 
 ### LESS
-- Requirements
-- Setup
-- Bootstrap
-- Compressor
-- Forms
+- [Requirements](http://bxm156.github.io/django-meetup/less/requirements)
+- [Setup](http://bxm156.github.io/django-meetup/less/setup)
+- [Bootstrap](http://bxm156.github.io/django-meetup/less/bootstrap)
+- [Compressor](http://bxm156.github.io/django-meetup/less/compressor)
+- [Forms](http://bxm156.github.io/django-meetup/less/forms)
