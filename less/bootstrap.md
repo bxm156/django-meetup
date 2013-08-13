@@ -38,19 +38,19 @@ You can override any Bootstrap variables in this file
 
 ```html
 {{ “{% compress js “}}%}
-	<script type="text/javascript" src="{% get_static_prefix %}js/jquery-1.10.1.js"></script>
-	<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-affix.js"></script>
-	<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-alert.js"></script>
-	<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-button.js"></script>
-	<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-carousel.js"></script>
-	<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-collapse.js"></script>
-	<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-dropdown.js"></script>
-	<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-modal.js"></script>
-	<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-tooltip.js"></script>
-	<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-popover.js"></script>
-	<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-scrollspy.js"></script>
-	<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-tab.js"></script>
-	<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-transition.js"></script>
-    <script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap-typeahead.js"></script>
+	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}js/jquery-1.10.1.js"></script>
+	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-affix.js"></script>
+	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-alert.js"></script>
+	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-button.js"></script>
+	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-carousel.js"></script>
+	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-collapse.js"></script>
+	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-dropdown.js"></script>
+	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-modal.js"></script>
+	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-tooltip.js"></script>
+	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-popover.js"></script>
+	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-scrollspy.js"></script>
+	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-tab.js"></script>
+	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-transition.js"></script>
+    <script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-typeahead.js"></script>
 {{ “{% endcompress “}}%}
 ```
