@@ -11,26 +11,24 @@ from DealsNearMe.apps.accounts.forms import CrispyUserRegistrationForm
 def overview(request):
     context = RequestContext(request)
     user = request.user
-    user_profile = user.get_profile()
     context.update({
         'first_name': user.first_name,
         'last_name': user.last_name,
-        'city': user_profile.city,
+        'city': user.city,
     })
     return render_to_response('overview.djhtml', context_instance=context)
 
 
 @login_required
 def edit_profile(request):
-    user_profile = request.user.get_profile()
     context = RequestContext(request)
     if request.method == 'POST':
-        form = CrispyUserProfileForm(request.POST, instance=user_profile)
+        form = CrispyUserProfileForm(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
             context.update({'submitted': True})
     else:
-        form = CrispyUserProfileForm(instance=user_profile)
+        form = CrispyUserProfileForm(instance=request.user)
     context.update({'form': form})
     return render_to_response('edit_profile.djhtml', context_instance=context)
 

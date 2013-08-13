@@ -1,18 +1,26 @@
 from django.db import models
 from django.db.models.signals import post_save
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.localflavor.us.models import USStateField
 
 
-class UserProfile(models.Model):
-    user = models.ForeignKey(User, unique=True)
+class User(AbstractBaseUser):
+    email = models.EmailField(max_length=254, unique=True, db_index=True)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
     address = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     state = USStateField()
     zipcode = models.CharField(max_length=15)
     favorite_color = models.CharField(max_length=255)
-    latitude = models.IntegerField()
-    longitude = models.IntegerField()
+    latitude = models.IntegerField(null=True)
+    longitude = models.IntegerField(null=True)
+
+    USERNAME_FIELD = 'email'
+
+    @property
+    def username(self):
+        return self.email
 
 
 def user_post_save(sender, instance, created, **kwargs):
