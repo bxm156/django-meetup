@@ -4,7 +4,7 @@ published: true
 ---
 
 ### Django User Profiles
-- [Overview](http://bxm156.github.io/django-meetup/1.4/overview)
+- [Overview](http://bxm156.github.io/django-meetup/overview)
 
 #### Django 1.4
 - [Overview](http://bxm156.github.io/django-meetup/1.4/index)
