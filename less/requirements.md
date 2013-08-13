@@ -30,7 +30,7 @@ brew install node
 ```
 
 #### Heroku
-Add the following directory to your root application path, in a folder called "bin".
+Add the following directory to your root application path, in a folder called `bin`.
 
 [https://github.com/bxm156/django-meetup/tree/master/bin](https://github.com/bxm156/django-meetup/tree/master/bin)
 
