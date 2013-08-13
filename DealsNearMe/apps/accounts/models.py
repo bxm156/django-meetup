@@ -13,8 +13,8 @@ class User(AbstractBaseUser):
     state = USStateField()
     zipcode = models.CharField(max_length=15)
     favorite_color = models.CharField(max_length=255)
-    latitude = models.IntegerField(null=True)
-    longitude = models.IntegerField(null=True)
+    latitude = models.FloatField(null=True)
+    longitude = models.FloatField(null=True)
 
     USERNAME_FIELD = 'email'
 
