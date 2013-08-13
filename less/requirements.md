@@ -6,9 +6,9 @@ layout: index
 ### LESS
 LESS extends CSS with dynamic behavior such as variables, mixins, operations and functions. It runs on both the server-side (with Node.js and Rhino) or client-side (modern browsers only).
 
-Main Site: http://lesscss.org/
+Main Site: [http://lesscss.org/](http://lesscss.org/)
 
-Play with it: http://less2css.org/
+Play with it: [http://less2css.org/](http://less2css.org/)
 
 
 ####Javascript Client
@@ -28,4 +28,3 @@ For Mac OS X users, you can install npm using brew
 ```bash
 brew install node
 ```
-
