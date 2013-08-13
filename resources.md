@@ -2,6 +2,7 @@
 layout: index
 published: true
 ---
+
 ### Resources
 
 #### Django
@@ -21,6 +22,6 @@ published: true
 
 [django-compressor](http://django-compressor.readthedocs.org/en/latest/)
 
+[django-crispy-forms](https://github.com/maraujop/django-crispy-forms)
+
 [Twitter Bootstrap Customization Best Practices](http://stackoverflow.com/questions/10451317/twitter-bootstrap-customization-best-practices)
-
-
