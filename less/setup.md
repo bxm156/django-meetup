@@ -13,7 +13,7 @@ pip install django_compressor
 ```
 
 #### settings.py
-Add 'compressor' to your listed of installed applications
+Add `compressor` to your listed of installed applications
 
 ```python
 INSTALLED_APPS = (
