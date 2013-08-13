@@ -1,3 +1,7 @@
+---
+layout: index
+published: true
+---
 ### Resources
 
 #### Django
