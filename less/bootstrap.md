@@ -29,7 +29,7 @@ You can override any Bootstrap variables in this file
 <html>
 	<head>
     	{{ “{% compress css “}}%}
-		<link rel="stylesheet" type="text/less" href="{% get_static_prefix %}theme.less" media="screen">
+		<link rel="stylesheet" type="text/less" href="{{ "{% get_static_prefix " }}%}theme.less" media="screen">
         {{ “{% endcompress “}}%}
     </head>
 </html>
