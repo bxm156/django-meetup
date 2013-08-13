@@ -3,55 +3,64 @@ published: true
 layout: index
 ---
 
-### Django 1.4
-#### User Profile Model (One-to-One Relationship)
+### Crispy Forms
+Quickly redner forms in Django with HTML and CSRF built in. It includes layout options and Bootstrap integration.
 
-In Django 1.4, define a model that that linked to the Django User Model via a One-To-One relationship. 
+[https://github.com/maraujop/django-crispy-forms](https://github.com/maraujop/django-crispy-forms)
 
-#####accounts/models.py
-```python
-from django.db import models
-from django.contrib.auth.models import User
+Docs: [http://django-crispy-forms.rtfd.org/](http://django-crispy-forms.rtfd.org/)
 
-class UserProfile(models.Model):
-    user = models.ForeignKey(User, unique=True)
-    url = models.URLField(blank=True)
-```
-In order for Django to know use the model as the profile, you need to define it in your settings.py
+Boostrap specific information: [http://django-crispy-forms.readthedocs.org/en/latest/layouts.html#bootstrap-layout-objects](http://django-crispy-forms.readthedocs.org/en/latest/layouts.html#bootstrap-layout-objects)
 
-#####settings.py
-```python
-AUTH_PROFILE_MODULE = "accounts.UserProfile"
+#### Insallation
+
+```bash
+pip install django-crispy-forms
 ```
 
-The profile model can be accessed by calling ```.get_profile()``` on the User model
-
-#####accounts/views.py
+##### settings.py
 ```python
-@login_required
-def view_page(request):
-    user_profile = request.user.get_profile()
+INSTALLED_APPS = (
+    # Other Apps
+    'crispy_forms',
+    # Other Apps
+)
 ```
 
-#####Drawbacks
-* 2 Database queries
-* Requires a new table
-* Username is limited to 30 characters
-* Its up to you to create the model when the User is created. What happens if its missing?
-
-####Proxies
-Proxies are another way of extending functionailty, but are very limited in what they offer. You can define a new class that inherits from User, and define it as a proxy class. This will allow you to access the User objects from the proxy class, and use any new methods defined by the proxy. It DOES NOT however allow for adding new fields to the User model.
-https://docs.djangoproject.com/en/1.4/topics/db/models/#proxy-models
+##### Usage
 ```python
-class UserProxy(User):
-    class Meta:
-        proxy = True
-    def get_full_name(self):
-        return self.first_name + " " + self.last_name
+from crispy_forms.layout import Submit, Layout, Field
+from crispy_forms.helper import FormHelper
+
+class CrispyUserRegistrationForm(UserRegistrationForm):
+
+    def __init__(self, request=None, *args, **kwargs):
+        super(CrispyUserRegistrationForm, self).__init__(request, *args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-register'
+        self.helper.form_method = 'post'
+        self.helper.form_tag = True
+
+        self.helper.layout = Layout(
+                Field('first_name', label='', placeholder="First Name"),
+                Field('last_name', label='', placeholder="Last Name"),
+                Field('username', label='', placeholder="Username"),
+                Field('password1', label='', placeholder="Password"),
+                Field('password2', label='', placeholder="Confirm Password"),
+                Field('address', label='', placeholder="Address"),
+                Field('city', label='', placeholder="City"),
+                Field('state', label='', placeholder="State"),
+                Field('zipcode', label='', placeholder="Zip"),
+                Field('favorite_color', label='', placeholder="Favorite Color"),
+                Submit('submit', "Register", css_class='btn-large')
+        )
 ```
+{% raw %}
+To render the form in a Django Template, add the `{% load crispy_forms_tags %}` to your template and use the `crispy` tag to render the form. For example: 
 
-####Monkey patch
-Yes, you could add new functionlity. Please don't, it will break.
+```html
+{% load crispy_forms_tags %}
+{% crispy form %}
+```
+{% endraw %}
 
-### Next
-[Creating the User Profile Model](http://bxm156.github.io/django-meetup/1.4/create)
