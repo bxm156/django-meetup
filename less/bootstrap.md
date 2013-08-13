@@ -20,6 +20,8 @@ You can override any Bootstrap variables in this file
 
 4. Load the the compress tag
 
+{{ “{% load compress “ }}%}
+
 ```html
 {{ “{% load compress “ }}%}
 ```
