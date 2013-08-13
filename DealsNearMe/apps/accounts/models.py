@@ -11,8 +11,8 @@ class UserProfile(models.Model):
     state = USStateField()
     zipcode = models.CharField(max_length=15)
     favorite_color = models.CharField(max_length=255)
-    latitude = models.IntegerField()
-    longitude = models.IntegerField()
+    latitude = models.FloatField()
+    longitude = models.FloatField()
 
 
 def user_post_save(sender, instance, created, **kwargs):
