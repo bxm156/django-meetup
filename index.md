@@ -18,3 +18,5 @@ published: true
 - [Setup](http://bxm156.github.io/django-meetup/less/setup)
 - [Bootstrap](http://bxm156.github.io/django-meetup/less/bootstrap)
 - [Forms](http://bxm156.github.io/django-meetup/less/forms)
+
+[Resources](http://bxm156.github.io/django-meetup/resources)
