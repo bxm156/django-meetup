@@ -26,6 +26,11 @@ STATICFILES_FINDERS = (
     # other finders..
     'compressor.finders.CompressorFinder',
 )
+# LESS Compiler
+COMPRESS_ENABLED = True
+COMPRESS_PRECOMPILERS = (
+    ('text/less', 'lessc {infile} {outfile}'),
+)
 ```
 
 
@@ -43,4 +48,3 @@ Upon once your Heroku app is compiled, these scripts will:
 3. Run collectstatic
 
 4. Compress!
-
