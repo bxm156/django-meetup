@@ -19,9 +19,9 @@ That way you can stay up to date and pull in the latest fixes easily if you so c
 You can override any Bootstrap variables in this file
 
 4. Load the the compress tag
-
+{% raw  %}
 {{ “{% load compress “ }}%}
-
+{% endraw %}
 ```html
 {{ “{% load compress “ }}%}
 ```
