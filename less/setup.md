@@ -14,12 +14,12 @@ pip install django_compressor
 
 #### settings.py
 Add 'compressor' to your listed of installed applications
+
 ```python
 INSTALLED_APPS = (
     # other apps
     "compressor",
 )
-
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
