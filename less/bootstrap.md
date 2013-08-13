@@ -7,6 +7,7 @@ layout: index
 
 #### Get the code
 There are many ways to get the bootstrap code. Most people just downloaded it to their project, but I prefer using a git submodule
+
 ```bash
 git submodule add git@github.com:twbs/bootstrap.git Project/static/bootstrap
 ```
@@ -18,23 +19,25 @@ That way you can stay up to date and pull in the latest fixes easily if you so c
 You can override any Bootstrap variables in this file
 
 4. Load the the compress tag
+
 ```html
-{{ “{% load compress “}}%}
+{{ “{% load compress “ }}%}
 ```
 
 5. Include the Bootstrap LESS and another other CSS/LESS files in the template and surrounded them with the `{{ “{% compress css “}}%}` tag.
+
 ```html
-{{ “{% load static “}}%}
+{{ “{% load static “ }}%}
 <!DOCTYPE html>
 <html>
 	<head>
-    	{{ “{% compress css “}}%}
+    	{{ “{% compress css “ }}%}
 		<link rel="stylesheet" type="text/less" href="{{ "{% get_static_prefix " }}%}theme.less" media="screen">
-        {{ “{% endcompress “}}%}
+        {{ “{% endcompress “ }}%}
     </head>
 </html>
 ```
-6. Include the required javascript files from the `bootstrap/js` folder. You can add these in the `<head>` or at the end of the `<body>`. You may also optionally surround them in `{{ “{% compress js “}}%}` tags.
+6. Include the required javascript files from the `bootstrap/js` folder. You can add these in the `<head>` or at the end of the `<body>`. You may also optionally surround them in `{{ “{% compress js “ }}%}` tags.
 
 ```html
 {{ “{% compress js “}}%}
@@ -52,5 +55,5 @@ You can override any Bootstrap variables in this file
 	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-tab.js"></script>
 	<script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-transition.js"></script>
     <script type="text/javascript" src="{{ “{%  get_static_prefix " }}%}bootstrap/js/bootstrap-typeahead.js"></script>
-{{ “{% endcompress “}}%}
+{{ “{% endcompress “ }}%}
 ```
