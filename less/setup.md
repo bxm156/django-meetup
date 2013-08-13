@@ -3,55 +3,44 @@ published: true
 layout: index
 ---
 
-### Django 1.4
-#### User Profile Model (One-to-One Relationship)
+### Setup with Django
+Packages: [django-compressor](http://django-compressor.readthedocs.org/en/latest/)
 
-In Django 1.4, define a model that that linked to the Django User Model via a One-To-One relationship. 
-
-#####accounts/models.py
-```python
-from django.db import models
-from django.contrib.auth.models import User
-
-class UserProfile(models.Model):
-    user = models.ForeignKey(User, unique=True)
-    url = models.URLField(blank=True)
-```
-In order for Django to know use the model as the profile, you need to define it in your settings.py
-
-#####settings.py
-```python
-AUTH_PROFILE_MODULE = "accounts.UserProfile"
+http://django-compressor.readthedocs.org/en/latest/quickstart/#installation
+#### pip
+```bash
+pip install django_compressor
 ```
 
-The profile model can be accessed by calling ```.get_profile()``` on the User model
-
-#####accounts/views.py
+#### settings.py
+Add 'compressor' to your listed of installed applications
 ```python
-@login_required
-def view_page(request):
-    user_profile = request.user.get_profile()
+INSTALLED_APPS = (
+    # other apps
+    "compressor",
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
 ```
 
-#####Drawbacks
-* 2 Database queries
-* Requires a new table
-* Username is limited to 30 characters
-* Its up to you to create the model when the User is created. What happens if its missing?
 
-####Proxies
-Proxies are another way of extending functionailty, but are very limited in what they offer. You can define a new class that inherits from User, and define it as a proxy class. This will allow you to access the User objects from the proxy class, and use any new methods defined by the proxy. It DOES NOT however allow for adding new fields to the User model.
-https://docs.djangoproject.com/en/1.4/topics/db/models/#proxy-models
-```python
-class UserProxy(User):
-    class Meta:
-        proxy = True
-    def get_full_name(self):
-        return self.first_name + " " + self.last_name
-```
+#### With Heroku
+Add the following directory to your root application path, in a folder called "bin".
+https://github.com/bxm156/django-meetup/tree/master/bin
 
-####Monkey patch
-Yes, you could add new functionlity. Please don't, it will break.
+Upon once your Heroku app is compiled, these scripts will:
 
-### Next
-[Creating the User Profile Model](http://bxm156.github.io/django-meetup/1.4/create)
+
+1. Install NodeJS
+
+2. Install LESS
+
+3. Run collectstatic
+
+4. Compress!
+
