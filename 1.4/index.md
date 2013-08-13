@@ -42,6 +42,7 @@ def view_page(request):
 ####Proxies
 Proxies are another way of extending functionailty, but are very limited in what they offer. You can define a new class that inherits from User, and define it as a proxy class. This will allow you to access the User objects from the proxy class, and use any new methods defined by the proxy. It DOES NOT however allow for adding new fields to the User model.
 https://docs.djangoproject.com/en/1.4/topics/db/models/#proxy-models
+
 ```python
 class UserProxy(User):
     class Meta:
