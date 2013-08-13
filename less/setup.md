@@ -31,7 +31,7 @@ STATICFILES_FINDERS = (
 
 #### With Heroku
 Add the following directory to your root application path, in a folder called "bin".
-https://github.com/bxm156/django-meetup/tree/master/bin
+[https://github.com/bxm156/django-meetup/tree/master/bin](https://github.com/bxm156/django-meetup/tree/master/bin)
 
 Upon once your Heroku app is compiled, these scripts will:
 
