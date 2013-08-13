@@ -47,6 +47,7 @@ https://docs.djangoproject.com/en/1.4/topics/db/models/#proxy-models
 class UserProxy(User):
     class Meta:
         proxy = True
+  
     def get_full_name(self):
         return self.first_name + " " + self.last_name
 ```
